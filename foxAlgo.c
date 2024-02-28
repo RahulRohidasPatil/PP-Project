@@ -5,8 +5,11 @@
 #include <math.h>
 #include <string.h>
 
-#define MATRIX_SIZE 8000
+
+#define MATRIX_SIZE 10
 #define NUM_PROCESSES 10
+
+void multiplyMatFunc(double**, double** , double**);
 
 void printMatrix(double** arr){
 
@@ -42,18 +45,17 @@ void fillArray(double** arr){
 
 }
 
-void Set_to_zero(double** arr){
+void Set_to_n(double** arr, double n){
 
     for(int i=0; i<MATRIX_SIZE; i++){
 
         for(int j = 0; j<MATRIX_SIZE; j++){
 
-            arr[i][j] = 0;
+            arr[i][j] = n;
 
         }
 
     }
-
 }
 
 typedef struct {
@@ -106,6 +108,17 @@ void Setup_grid(
     MPI_Cart_sub(grid->comm,free_coords, &(grid->col_comm));
 }
 
+double** Local_matrix_allocate(int nbar){
+    double** temp = (double**)malloc(nbar*nbar*sizeof(double*));
+
+    for(int i=0; i<MATRIX_SIZE; i++){
+
+        temp[i] = (double*)malloc(MATRIX_SIZE*sizeof(double));   
+
+    }
+    return temp;
+}
+
 
 void Fox(
     int         n,
@@ -125,7 +138,7 @@ void Fox(
 
 
     n_bar = n / grid->q;
-    Set_to_zero(local_C);
+    Set_to_n(local_C,0);
 
 
     //calculate address for circular shift of B
@@ -133,29 +146,25 @@ void Fox(
     int dest = (grid-> my_row + grid->q - 1) % grid->q;
 
     //set aside storage for the brodcast block of A
-    temp_A = Local_matrix_allocate(n_bar);
+    tempA = Local_matrix_allocate(n_bar);
 
     for(stage=0;stage < grid->q; stage++){
         bcast_root = (grid->my_row + stage) % grid->q;
 
         if(bcast_root == grid->my_col){
             MPI_Bcast(local_A,1,MPI_DOUBLE,bcast_root,grid->row_comm);
-            Local_matrix_multiply(local_A,local_B,local_C);
+            multiplyMatFunc(local_A,local_B,local_C);
         }else{
-            MPI_Bcast(temp_A,1,local_matrix_mpi_t,bcast_root,grid->row_comm);
-            Local_matrix_multiply(local_A,local_B,local_C);
+            MPI_Bcast(tempA,1,MPI_DOUBLE,bcast_root,grid->row_comm);
+            multiplyMatFunc(local_A,local_B,local_C);
         }
 
-        MPI_Sendrecv_replace(local_B,1,local_matrix_mpi_t,dest,0,source,0,grid->col_comm, &status);
+        MPI_Sendrecv_replace(local_B,1,MPI_DOUBLE,dest,0,source,0,grid->col_comm, &status);
 
     }
 }
 
-int main(int argc, char* argv[]){
-
-}
-
-void multiplyMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE], int productMatrix[][MATRIX_SIZE])
+void multiplyMatFunc(double** matrix1, double** matrix2, double** productMatrix)
 {
     for (int i = 0; i < MATRIX_SIZE; i++)
     {
@@ -169,3 +178,54 @@ void multiplyMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE], in
         }
     }
 }
+
+int main(int argc, char* argv[]){
+    srand(time(0));
+
+    double** matrix_a;
+
+    double** matrix_b;
+
+    double** matrix_c;
+
+    int rank;
+
+    int size;
+
+    int ierr;
+
+    MPI_Status status;
+
+    MPI_Init(&argc, &argv);
+
+    GRID_INFO_T* grid;
+    Setup_grid(&grid);
+    
+
+    // MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    // MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    // if(rank == 0){
+    //     matrix_a = Local_matrix_allocate(MATRIX_SIZE);
+    //     matrix_b = Local_matrix_allocate(MATRIX_SIZE);
+    //     matrix_c = Local_matrix_allocate(MATRIX_SIZE);
+
+    //     fillArray(matrix_a);
+    //     fillArray(matrix_b);
+
+    //     printMatrix(matrix_a);
+    //     printMatrix(matrix_b);
+
+    //     printf("matrix init completed by rank 0");
+    //     free(matrix_a);
+    //     free(matrix_b);
+    //     free(matrix_c);
+
+    // }else{
+    //     printf("rank %d ready to serve",rank);
+    // }
+
+    ierr = MPI_Finalize();
+}
+
