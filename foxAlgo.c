@@ -208,39 +208,32 @@ int main(int argc, char* argv[]){
 
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    if(rank == 0){
-        matrix_a = Local_matrix_allocate(MATRIX_SIZE);
-        matrix_b = Local_matrix_allocate(MATRIX_SIZE);
-        printMatrix(matrix_a);
-        printMatrix(matrix_b);
-        free(matrix_a);
-        free(matrix_b);
-    }
+    printf("my rank %d : row = %d, col = %d\n",grid.my_rank,grid.my_row,grid.my_col);
     
 
     // MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
     // MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    // if(rank == 0){
-    //     matrix_a = Local_matrix_allocate(MATRIX_SIZE);
-    //     matrix_b = Local_matrix_allocate(MATRIX_SIZE);
-    //     matrix_c = Local_matrix_allocate(MATRIX_SIZE);
+    if(rank == 0){
+        matrix_a = Local_matrix_allocate(MATRIX_SIZE);
+        matrix_b = Local_matrix_allocate(MATRIX_SIZE);
+        matrix_c = Local_matrix_allocate(MATRIX_SIZE);
 
-    //     fillArray(matrix_a);
-    //     fillArray(matrix_b);
+        fillArray(matrix_a);
+        fillArray(matrix_b);
 
-    //     printMatrix(matrix_a);
-    //     printMatrix(matrix_b);
+        printMatrix(matrix_a);
+        printMatrix(matrix_b);
 
-    //     printf("matrix init completed by rank 0");
-    //     free(matrix_a);
-    //     free(matrix_b);
-    //     free(matrix_c);
+        printf("matrix init completed by rank 0");
+        free(matrix_a);
+        free(matrix_b);
+        free(matrix_c);
 
-    // }else{
-    //     printf("rank %d ready to serve",rank);
-    // }
+    }else{
+        printf("rank %d ready to serve",rank);
+    }
 
     ierr = MPI_Finalize();
 }
