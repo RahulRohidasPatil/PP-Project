@@ -6,8 +6,8 @@
 #include <string.h>
 
 
-#define MATRIX_SIZE 10
-#define NUM_PROCESSES 10
+#define MATRIX_SIZE 4
+#define NUM_PROCESSES 2
 
 void multiplyMatFunc(double**, double** , double**);
 
@@ -198,8 +198,24 @@ int main(int argc, char* argv[]){
 
     MPI_Init(&argc, &argv);
 
-    GRID_INFO_T* grid;
+    GRID_INFO_T grid;
+    grid.p=NUM_PROCESSES;    
+    
     Setup_grid(&grid);
+    
+
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    if(rank == 0){
+        matrix_a = Local_matrix_allocate(MATRIX_SIZE);
+        matrix_b = Local_matrix_allocate(MATRIX_SIZE);
+        printMatrix(matrix_a);
+        printMatrix(matrix_b);
+        free(matrix_a);
+        free(matrix_b);
+    }
     
 
     // MPI_Comm_rank(MPI_COMM_WORLD, &rank);
