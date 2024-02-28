@@ -154,3 +154,18 @@ void Fox(
 int main(int argc, char* argv[]){
 
 }
+
+void multiplyMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE], int productMatrix[][MATRIX_SIZE])
+{
+    for (int i = 0; i < MATRIX_SIZE; i++)
+    {
+        for (int j = 0; j < MATRIX_SIZE; j++)
+        {
+            productMatrix[i][j] = 0;
+            for (int k = 0; k < MATRIX_SIZE; k++)
+            {
+                productMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+}
