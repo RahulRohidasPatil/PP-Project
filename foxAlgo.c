@@ -1,7 +1,8 @@
-#include<mpi.h>
+#include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include <string.h>
 
 #define MATRIX_SIZE 8000
@@ -34,6 +35,20 @@ void fillArray(double** arr){
             int random = rand();
 
             arr[i][j] = (double)random/RAND_MAX;
+
+        }
+
+    }
+
+}
+
+void Set_to_zero(double** arr){
+
+    for(int i=0; i<MATRIX_SIZE; i++){
+
+        for(int j = 0; j<MATRIX_SIZE; j++){
+
+            arr[i][j] = 0;
 
         }
 
@@ -83,7 +98,7 @@ void Setup_grid(
     //set up row communicators
     free_coords[0] = 0;
     free_coords[1] = 1;
-    MPI_Cart_sub(grid->comm,free_coords, &(grid->rom_comm));
+    MPI_Cart_sub(grid->comm,free_coords, &(grid->row_comm));
 
     //set up col communicators
     free_coords[0] = 1;
@@ -95,12 +110,12 @@ void Setup_grid(
 void Fox(
     int         n,
     GRID_INFO_T* grid,
-    LOCAL_MATRIX_T* local_A,
-    LOCAL_MATRIX_T* local_B,
-    LOCAL_MATRIX_T* local_C
+    double** local_A,
+    double** local_B,
+    double** local_C
 ){
 
-    LOCAL_MATIX_T* tempA;
+    double** tempA;
     int stage;
     int bcast_root;
     int n_bar;
@@ -114,8 +129,8 @@ void Fox(
 
 
     //calculate address for circular shift of B
-    source = (grid->my_row + 1) % grid->q;
-    dest = (grid-> my_row + grid->q - 1) % grid->q;
+    int source = (grid->my_row + 1) % grid->q;
+    int dest = (grid-> my_row + grid->q - 1) % grid->q;
 
     //set aside storage for the brodcast block of A
     temp_A = Local_matrix_allocate(n_bar);
@@ -124,7 +139,7 @@ void Fox(
         bcast_root = (grid->my_row + stage) % grid->q;
 
         if(bcast_root == grid->my_col){
-            MPI_Bcast(local_A,1,local_matrix_mpi_t,bcast_root,grid->row_comm);
+            MPI_Bcast(local_A,1,MPI_DOUBLE,bcast_root,grid->row_comm);
             Local_matrix_multiply(local_A,local_B,local_C);
         }else{
             MPI_Bcast(temp_A,1,local_matrix_mpi_t,bcast_root,grid->row_comm);
