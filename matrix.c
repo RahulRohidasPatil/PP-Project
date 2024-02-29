@@ -8,6 +8,7 @@
 void allocateMatrix(int ***matrix);
 void fillMatrix(int **matrix);
 void printMatrix(int **matrix);
+void freeMatrix(int **matrix);
 
 int main(int argc, char *argv[])
 {
@@ -60,4 +61,11 @@ void printMatrix(int **matrix)
         printf("%s", i != MATRIX_SIZE - 1 ? "]\n" : "]");
     }
     printf("]\n");
+}
+
+void freeMatrix(int **matrix)
+{
+    for (int i = 0; i < MATRIX_SIZE; i++)
+        free(matrix[i]);
+    free(matrix);
 }
