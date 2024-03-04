@@ -5,9 +5,7 @@
 #include <math.h>
 #include <string.h>
 
-
-#define MATRIX_SIZE 4
-#define NUM_PROCESSES 16
+int MATRIX_SIZE;
 
 void multiplyMatFunc(double**, double** , double**, int);
 
@@ -152,9 +150,6 @@ void Fox(
     int stage;
     int bcast_root;
     int n_bar;
-    int score;
-    int dist;
-    MPI_Status status;
 
 
     n_bar = n / grid->q;
@@ -180,8 +175,8 @@ void Fox(
             MPI_Bcast(tempA[0],n_bar * n_bar,MPI_DOUBLE,bcast_root,grid->row_comm);
             multiplyMatFunc(tempA,local_B,local_C,n_bar);
         }
-        
-        MPI_Sendrecv_replace(local_B[0],n_bar * n_bar,MPI_DOUBLE,dest,0,source,0,grid->col_comm, &status);
+
+        MPI_Sendrecv_replace(local_B[0], n_bar * n_bar, MPI_DOUBLE, dest, 0, source, 0, grid->col_comm, MPI_STATUS_IGNORE);
     }
 }
 
@@ -210,6 +205,8 @@ int free2dchar(double ***array) {
 }
 
 int main(int argc, char* argv[]){
+    MATRIX_SIZE = atoi(argv[1]);
+
     srand(time(0));
 
     double** matrix_a;
@@ -222,25 +219,17 @@ int main(int argc, char* argv[]){
 
     int size;
 
-    int ierr;
-
-    int procgridSize = MATRIX_SIZE / (MATRIX_SIZE / sqrt(NUM_PROCESSES));
-    int procElemSize = MATRIX_SIZE / sqrt(NUM_PROCESSES);
-
-
-
-    MPI_Status status;
-
     MPI_Init(&argc, &argv);
-
-    GRID_INFO_T grid;
-    grid.p=NUM_PROCESSES;  
-    Setup_grid(&grid);
     
-
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    int procgridSize = MATRIX_SIZE / (MATRIX_SIZE / sqrt(size));
+    int procElemSize = MATRIX_SIZE / sqrt(size);
+
+    GRID_INFO_T grid;
+    grid.p=size;  
+    Setup_grid(&grid);
 
     if(rank == 0){
         Local_matrix_allocate(&matrix_a,MATRIX_SIZE);
@@ -329,9 +318,7 @@ int main(int argc, char* argv[]){
     MPI_Gatherv(&(localC[0][0]), MATRIX_SIZE* MATRIX_SIZE/(procgridSize*procgridSize),MPI_DOUBLE,globalptrC,sendcounts,displs,subArrType,0,grid.comm);
 
     if(rank==0){
-        printMatrix(matrix_c,MATRIX_SIZE);
-        Set_to_n(matrix_c,0,MATRIX_SIZE);
-        multiplyMatFunc(matrix_a,matrix_b,matrix_c,MATRIX_SIZE);
+        printf("Matrix C:\n");
         printMatrix(matrix_c,MATRIX_SIZE);
     }
 
@@ -346,8 +333,6 @@ int main(int argc, char* argv[]){
         free2dchar(&matrix_b);
         free2dchar(&matrix_c);
     }
-    
 
-    ierr = MPI_Finalize();
+    MPI_Finalize();
 }
-
