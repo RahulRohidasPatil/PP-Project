@@ -260,8 +260,8 @@ int main(int argc, char* argv[]){
         // Set_to_n(matrix_a,1,MATRIX_SIZE);
         // Set_to_n(matrix_b,1,MATRIX_SIZE);
 
-        printMatrix(matrix_a,MATRIX_SIZE);
-        printMatrix(matrix_b,MATRIX_SIZE);
+        //printMatrix(matrix_a,MATRIX_SIZE);
+        //printMatrix(matrix_b,MATRIX_SIZE);
 
         // printf("matrix init completed by rank 0");
         // free(matrix_a);
@@ -318,8 +318,8 @@ int main(int argc, char* argv[]){
     MPI_Gatherv(&(localC[0][0]), MATRIX_SIZE* MATRIX_SIZE/(procgridSize*procgridSize),MPI_DOUBLE,globalptrC,sendcounts,displs,subArrType,0,grid.comm);
 
     if(rank==0){
-        printf("Matrix C:\n");
-        printMatrix(matrix_c,MATRIX_SIZE);
+        // printf("Matrix C:\n");
+        // printMatrix(matrix_c,MATRIX_SIZE);
     }
 
     MPI_Type_free(&subArrType);
