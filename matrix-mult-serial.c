@@ -1,35 +1,51 @@
+#include <math.h>
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define MATRIX_SIZE 576
+#define MATRIX_SIZE 256
 
-void fillMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE]);
-void printMatrix(int matrix[][MATRIX_SIZE]);
-void multiplyMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE], int productMatrix[][MATRIX_SIZE]);
+void allocateMatrix(int ***, int);
+void fillMatrix(int **, int);
+void printMatrix(int **, int);
+void freeMatrix(int **);
+void multiplyMatrices(int **, int **, int **, int);
 
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
-    int size, rank;
-    int matrix1[MATRIX_SIZE][MATRIX_SIZE];
-    int matrix2[MATRIX_SIZE][MATRIX_SIZE];
-    int productMatrix[MATRIX_SIZE][MATRIX_SIZE];
+    int size, rank, **matrixA, **matrixB, **matrixC;
     /* No MPI calls before this */
     MPI_Init(&argc, &argv);
+
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
     if (rank == 0)
     {
-        fillMatrices(matrix1, matrix2);
+        allocateMatrix(&matrixA, MATRIX_SIZE);
+        fillMatrix(matrixA, MATRIX_SIZE);
+        printf("Matrix A:\n");
+        // printMatrix(matrixA, MATRIX_SIZE);
 
-        // printMatrix(matrix1);
-        // printMatrix(matrix2);
+        allocateMatrix(&matrixB, MATRIX_SIZE);
+        fillMatrix(matrixB, MATRIX_SIZE);
+        printf("Matrix B:\n");
+        // printMatrix(matrixB, MATRIX_SIZE);
 
-        multiplyMatrices(matrix1, matrix2, productMatrix);
-        // printMatrix(productMatrix);
+        allocateMatrix(&matrixC, MATRIX_SIZE);
+
+        multiplyMatrices(matrixA, matrixB, matrixC, MATRIX_SIZE);
+        printf("Matrix C:\n");
+        // printMatrix(matrixC, MATRIX_SIZE);
+    }
+
+    if (rank == 0)
+    {
+        freeMatrix(matrixA);
+        freeMatrix(matrixB);
+        freeMatrix(matrixC);
     }
 
     MPI_Finalize();
@@ -37,44 +53,49 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void fillMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE])
+void allocateMatrix(int ***matrix, int size)
 {
-    for (int i = 0; i < MATRIX_SIZE; i++)
-    {
-        for (int j = 0; j < MATRIX_SIZE; j++)
-        {
-            matrix1[i][j] = rand() % 10;
-            matrix2[i][j] = rand() % 10;
-        }
-    }
+    *matrix = (int **)malloc(size * sizeof(int *));
+    int *block = (int *)malloc(size * size * sizeof(int));
+    for (int i = 0; i < size; i++)
+        (*matrix)[i] = block + i * size;
 }
 
-void printMatrix(int matrix[][MATRIX_SIZE])
+void fillMatrix(int **matrix, int size)
+{
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            matrix[i][j] = rand() % 10;
+}
+
+void printMatrix(int **matrix, int size)
 {
     printf("[");
-    for (int i = 0; i < MATRIX_SIZE; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("%s", i == 0 ? "[" : " [");
-        for (int j = 0; j < MATRIX_SIZE; j++)
-        {
-            printf("%d%s", matrix[i][j], j != MATRIX_SIZE - 1 ? ", " : "");
-        }
-        printf("%s", i != MATRIX_SIZE - 1 ? "]\n" : "]");
+        for (int j = 0; j < size; j++)
+            printf("%d%s", matrix[i][j], j != size - 1 ? ", " : "");
+        printf("%s", i != size - 1 ? "]\n" : "]");
     }
     printf("]\n");
 }
 
-void multiplyMatrices(int matrix1[][MATRIX_SIZE], int matrix2[][MATRIX_SIZE], int productMatrix[][MATRIX_SIZE])
+void freeMatrix(int **matrix)
 {
-    for (int i = 0; i < MATRIX_SIZE; i++)
+    free(matrix[0]);
+    free(matrix);
+}
+
+void multiplyMatrices(int **matrixA, int **matrixB, int **matrixC, int size)
+{
+    for (int i = 0; i < size; i++)
     {
-        for (int j = 0; j < MATRIX_SIZE; j++)
+        for (int j = 0; j < size; j++)
         {
-            productMatrix[i][j] = 0;
-            for (int k = 0; k < MATRIX_SIZE; k++)
-            {
-                productMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
-            }
+            matrixC[i][j] = 0;
+            for (int k = 0; k < size; k++)
+                matrixC[i][j] += matrixA[i][k] * matrixB[k][j];
         }
     }
 }
