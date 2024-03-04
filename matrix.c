@@ -1,14 +1,15 @@
+#include <math.h>
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define MATRIX_SIZE 2
+#define MATRIX_SIZE 2048
 
-void allocateMatrix(int ***matrix);
-void fillMatrix(int **matrix);
-void printMatrix(int **matrix);
-void freeMatrix(int **matrix);
+void allocateMatrix(int ***, int);
+void fillMatrix(int **, int);
+void printMatrix(int **, int);
+void freeMatrix(int **);
 
 int main(int argc, char *argv[])
 {
@@ -22,13 +23,23 @@ int main(int argc, char *argv[])
 
     if (rank == 0)
     {
-        allocateMatrix(&matrixA);
-        fillMatrix(matrixA);
-        printMatrix(matrixA);
+        allocateMatrix(&matrixA, MATRIX_SIZE);
+        fillMatrix(matrixA, MATRIX_SIZE);
 
-        allocateMatrix(&matrixB);
-        fillMatrix(matrixB);
-        printMatrix(matrixB);
+        printf("Matrix A:\n");
+        // printMatrix(matrixA, MATRIX_SIZE);
+
+        allocateMatrix(&matrixB, MATRIX_SIZE);
+        fillMatrix(matrixB, MATRIX_SIZE);
+
+        printf("Matrix B:\n");
+        // printMatrix(matrixB, MATRIX_SIZE);
+    }
+
+    if (rank == 0)
+    {
+        freeMatrix(matrixA);
+        freeMatrix(matrixB);
     }
 
     MPI_Finalize();
@@ -36,36 +47,36 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void allocateMatrix(int ***matrix)
+void allocateMatrix(int ***matrix, int size)
 {
-    *matrix = (int **)malloc(MATRIX_SIZE * sizeof(int *));
-    for (int i = 0; i < MATRIX_SIZE; i++)
-        (*matrix)[i] = (int *)malloc(MATRIX_SIZE * sizeof(int));
+    *matrix = (int **)malloc(size * sizeof(int *));
+    int *block = (int *)malloc(size * size * sizeof(int));
+    for (int i = 0; i < size; i++)
+        (*matrix)[i] = block + i * size;
 }
 
-void fillMatrix(int **matrix)
+void fillMatrix(int **matrix, int size)
 {
-    for (int i = 0; i < MATRIX_SIZE; i++)
-        for (int j = 0; j < MATRIX_SIZE; j++)
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
             matrix[i][j] = rand() % 10;
 }
 
-void printMatrix(int **matrix)
+void printMatrix(int **matrix, int size)
 {
     printf("[");
-    for (int i = 0; i < MATRIX_SIZE; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("%s", i == 0 ? "[" : " [");
-        for (int j = 0; j < MATRIX_SIZE; j++)
-            printf("%d%s", matrix[i][j], j != MATRIX_SIZE - 1 ? ", " : "");
-        printf("%s", i != MATRIX_SIZE - 1 ? "]\n" : "]");
+        for (int j = 0; j < size; j++)
+            printf("%d%s", matrix[i][j], j != size - 1 ? ", " : "");
+        printf("%s", i != size - 1 ? "]\n" : "]");
     }
     printf("]\n");
 }
 
 void freeMatrix(int **matrix)
 {
-    for (int i = 0; i < MATRIX_SIZE; i++)
-        free(matrix[i]);
+    free(matrix[0]);
     free(matrix);
 }
