@@ -1,0 +1,816 @@
+10 templated_functions_MULTI_TIME
+# Name Calls Subrs Excl Incl ProfileCalls # <metadata><attribute><name>Metric Name</name><value>TIME</value></attribute><attribute><name>CPU Cores</name><value>8</value></attribute><attribute><name>CPU MHz</name><value>2103.232</value></attribute><attribute><name>CPU Type</name><value>AMD Opteron(TM) Processor 6272</value></attribute><attribute><name>CPU Vendor</name><value>AuthenticAMD</value></attribute><attribute><name>CPUs Allowed</name><value>00000000,0000ffff</value></attribute><attribute><name>CPUs Allowed List</name><value>0-15</value></attribute><attribute><name>CWD</name><value>/home/fdai0231/eduMPI_files/TAU_ANALYSIS_TEST</value></attribute><attribute><name>Cache Size</name><value>2048 KB</value></attribute><attribute><name>Command Line</name><value>./matrix_matrix_mult</value></attribute><attribute><name>Executable</name><value>/home/fdai0231/eduMPI_files/TAU_ANALYSIS_TEST/matrix_matrix_mult</value></attribute><attribute><name>Hostname</name><value>node-00</value></attribute><attribute><name>Local Time</name><value>2024-01-24T18:38:18+01:00</value></attribute><attribute><name>MPI Processor Name</name><value>node-00</value></attribute><attribute><name>Memories Allowed</name><value>00000000,000000ff</value></attribute><attribute><name>Memories Allowed List</name><value>0-7</value></attribute><attribute><name>Memory Size</name><value>264042036 kB</value></attribute><attribute><name>Node Name</name><value>node-00</value></attribute><attribute><name>OS Machine</name><value>x86_64</value></attribute><attribute><name>OS Name</name><value>Linux</value></attribute><attribute><name>OS Release</name><value>6.1.71</value></attribute><attribute><name>OS Version</name><value>#1-NixOS SMP PREEMPT_DYNAMIC Fri Jan  5 14:18:41 UTC 2024</value></attribute><attribute><name>Starting Timestamp</name><value>1706117898461115</value></attribute><attribute><name>TAU Architecture</name><value>default</value></attribute><attribute><name>TAU Config</name><value> -c++=g++ -mpiinc=/home/fdai0231/MPI_Testumgebung/include -mpilib=/home/fdai0231/MPI_Testumgebung/lib -pdt=/home/fdai0231/pdtoolkit-3.25.1</value></attribute><attribute><name>TAU Makefile</name><value>/home/fdai0231/tau-2.33/x86_64/lib/Makefile.tau-mpi-pdt</value></attribute><attribute><name>TAU Version</name><value>2.32.1-git</value></attribute><attribute><name>TAU_BFD_LOOKUP</name><value>on</value></attribute><attribute><name>TAU_CALLPATH</name><value>off</value></attribute><attribute><name>TAU_CALLPATH_DEPTH</name><value>2</value></attribute><attribute><name>TAU_CALLSITE_DEPTH</name><value>1</value></attribute><attribute><name>TAU_COMM_MATRIX</name><value>on</value></attribute><attribute><name>TAU_COMPENSATE</name><value>off</value></attribute><attribute><name>TAU_CUDA_BINARY_EXE</name><value></value></attribute><attribute><name>TAU_CUPTI_API</name><value>runtime</value></attribute><attribute><name>TAU_CURRENT_TIMER_EXIT_PARAMS</name><value>on</value></attribute><attribute><name>TAU_EBS_KEEP_UNRESOLVED_ADDR</name><value>off</value></attribute><attribute><name>TAU_ENABLE_THREAD_CONTEXT</name><value>off</value></attribute><attribute><name>TAU_IBM_BG_HWP_COUNTERS</name><value>off</value></attribute><attribute><name>TAU_MEASURE_TAU</name><value>off</value></attribute><attribute><name>TAU_MEMDBG_PROTECT_ABOVE</name><value>off</value></attribute><attribute><name>TAU_MEMDBG_PROTECT_BELOW</name><value>off</value></attribute><attribute><name>TAU_MEMDBG_PROTECT_FREE</name><value>off</value></attribute><attribute><name>TAU_OPENMP_RUNTIME</name><value>on</value></attribute><attribute><name>TAU_OPENMP_RUNTIME_EVENTS</name><value>on</value></attribute><attribute><name>TAU_OPENMP_RUNTIME_STATES</name><value>off</value></attribute><attribute><name>TAU_OUTPUT_CUDA_CSV</name><value>off</value></attribute><attribute><name>TAU_PAPI_MULTIPLEXING</name><value>off</value></attribute><attribute><name>TAU_PROFILE</name><value>on</value></attribute><attribute><name>TAU_PROFILE_FORMAT</name><value>profile</value></attribute><attribute><name>TAU_RECYCLE_THREADS</name><value>off</value></attribute><attribute><name>TAU_REGION_ADDRESSES</name><value>off</value></attribute><attribute><name>TAU_SAMPLING</name><value>off</value></attribute><attribute><name>TAU_SHOW_MEMORY_FUNCTIONS</name><value>off</value></attribute><attribute><name>TAU_SIGNALS_GDB</name><value>off</value></attribute><attribute><name>TAU_THROTTLE</name><value>on</value></attribute><attribute><name>TAU_THROTTLE_NUMCALLS</name><value>100000</value></attribute><attribute><name>TAU_THROTTLE_PERCALL</name><value>10</value></attribute><attribute><name>TAU_TRACE</name><value>off</value></attribute><attribute><name>TAU_TRACE_FORMAT</name><value>tau</value></attribute><attribute><name>TAU_TRACK_CUDA_CDP</name><value>off</value></attribute><attribute><name>TAU_TRACK_CUDA_ENV</name><value>off</value></attribute><attribute><name>TAU_TRACK_CUDA_INSTRUCTIONS</name><value></value></attribute><attribute><name>TAU_TRACK_CUDA_SASS</name><value>off</value></attribute><attribute><name>TAU_TRACK_HEADROOM</name><value>off</value></attribute><attribute><name>TAU_TRACK_HEAP</name><value>off</value></attribute><attribute><name>TAU_TRACK_IO_PARAMS</name><value>off</value></attribute><attribute><name>TAU_TRACK_MEMORY_FOOTPRINT</name><value>off</value></attribute><attribute><name>TAU_TRACK_MEMORY_LEAKS</name><value>off</value></attribute><attribute><name>TAU_TRACK_MESSAGE</name><value>on</value></attribute><attribute><name>TAU_TRACK_SIGNALS</name><value>off</value></attribute><attribute><name>TAU_TRACK_UNIFIED_MEMORY</name><value>off</value></attribute><attribute><name>TAU_VERBOSE_RANK</name><value>-1</value></attribute><attribute><name>Timestamp</name><value>1706117898461431</value></attribute><attribute><name>UTC Time</name><value>2024-01-24T17:38:18Z</value></attribute><attribute><name>pid</name><value>36360</value></attribute><attribute><name>tid</name><value>36360</value></attribute><attribute><name>username</name><value>fdai0231</value></attribute><attribute><name>Ending Timestamp</name><value>1706117970908784</value></attribute></metadata>
+".TAU application" 1 1 644 72447525 0 GROUP="TAU_DEFAULT" 
+"taupreload_main" 1 24403 9879594 72446881 0 GROUP="TAU_DEFAULT" 
+"MPI_Init()  " 1 0 863604 863604 0 GROUP="MPI" 
+"MPI_Comm_rank()  " 1 0 6 6 0 GROUP="MPI" 
+"MPI_Comm_size()  " 1 0 3 3 0 GROUP="MPI" 
+"MPI_Bcast()  " 8000 8000 2455676 10507813 0 GROUP="MPI" 
+"MPI Collective Sync  " 8000 0 8052137 8052137 0 GROUP="MPI" 
+"MPI_Send()  " 8399 0 920443 920443 0 GROUP="MPI" 
+"MPI_Recv()  " 8000 0 50150060 50150060 0 GROUP="MPI" 
+"MPI_Finalize()  " 1 0 125358 125358 0 GROUP="MPI" 
+0 aggregates
+801 userevents
+# eventname numevents max min mean sumsqr
+"Message size for broadcast" 8000 64000 64000 64000 32768000000000
+"Message size sent to all nodes" 8399 64000 64000 64000 34402304000000
+"Message size sent to node 1" 21 64000 64000 64000 86016000000
+"Message size sent to node 1 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 2" 21 64000 64000 64000 86016000000
+"Message size sent to node 2 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 3" 22 64000 64000 64000 90112000000
+"Message size sent to node 3 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 4" 23 64000 64000 64000 94208000000
+"Message size sent to node 4 : taupreload_main => MPI_Send()  " 23 64000 64000 64000 94208000000
+"Message size sent to node 5" 21 64000 64000 64000 86016000000
+"Message size sent to node 5 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 6" 21 64000 64000 64000 86016000000
+"Message size sent to node 6 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 7" 22 64000 64000 64000 90112000000
+"Message size sent to node 7 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 8" 22 64000 64000 64000 90112000000
+"Message size sent to node 8 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 9" 20 64000 64000 64000 81920000000
+"Message size sent to node 9 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 10" 20 64000 64000 64000 81920000000
+"Message size sent to node 10 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 11" 21 64000 64000 64000 86016000000
+"Message size sent to node 11 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 12" 22 64000 64000 64000 90112000000
+"Message size sent to node 12 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 13" 23 64000 64000 64000 94208000000
+"Message size sent to node 13 : taupreload_main => MPI_Send()  " 23 64000 64000 64000 94208000000
+"Message size sent to node 14" 34 64000 64000 64000 139264000000
+"Message size sent to node 14 : taupreload_main => MPI_Send()  " 34 64000 64000 64000 139264000000
+"Message size sent to node 15" 20 64000 64000 64000 81920000000
+"Message size sent to node 15 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 16" 21 64000 64000 64000 86016000000
+"Message size sent to node 16 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 17" 21 64000 64000 64000 86016000000
+"Message size sent to node 17 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 18" 20 64000 64000 64000 81920000000
+"Message size sent to node 18 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 19" 21 64000 64000 64000 86016000000
+"Message size sent to node 19 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 20" 20 64000 64000 64000 81920000000
+"Message size sent to node 20 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 21" 20 64000 64000 64000 81920000000
+"Message size sent to node 21 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 22" 21 64000 64000 64000 86016000000
+"Message size sent to node 22 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 23" 20 64000 64000 64000 81920000000
+"Message size sent to node 23 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 24" 20 64000 64000 64000 81920000000
+"Message size sent to node 24 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 25" 21 64000 64000 64000 86016000000
+"Message size sent to node 25 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 26" 20 64000 64000 64000 81920000000
+"Message size sent to node 26 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 27" 20 64000 64000 64000 81920000000
+"Message size sent to node 27 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 28" 20 64000 64000 64000 81920000000
+"Message size sent to node 28 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 29" 20 64000 64000 64000 81920000000
+"Message size sent to node 29 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 30" 20 64000 64000 64000 81920000000
+"Message size sent to node 30 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 31" 21 64000 64000 64000 86016000000
+"Message size sent to node 31 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 32" 20 64000 64000 64000 81920000000
+"Message size sent to node 32 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 33" 20 64000 64000 64000 81920000000
+"Message size sent to node 33 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 34" 20 64000 64000 64000 81920000000
+"Message size sent to node 34 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 35" 20 64000 64000 64000 81920000000
+"Message size sent to node 35 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 36" 21 64000 64000 64000 86016000000
+"Message size sent to node 36 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 37" 21 64000 64000 64000 86016000000
+"Message size sent to node 37 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 38" 21 64000 64000 64000 86016000000
+"Message size sent to node 38 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 39" 20 64000 64000 64000 81920000000
+"Message size sent to node 39 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 40" 21 64000 64000 64000 86016000000
+"Message size sent to node 40 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 41" 21 64000 64000 64000 86016000000
+"Message size sent to node 41 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 42" 21 64000 64000 64000 86016000000
+"Message size sent to node 42 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 43" 21 64000 64000 64000 86016000000
+"Message size sent to node 43 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 44" 22 64000 64000 64000 90112000000
+"Message size sent to node 44 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 45" 21 64000 64000 64000 86016000000
+"Message size sent to node 45 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 46" 21 64000 64000 64000 86016000000
+"Message size sent to node 46 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 47" 20 64000 64000 64000 81920000000
+"Message size sent to node 47 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 48" 21 64000 64000 64000 86016000000
+"Message size sent to node 48 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 49" 21 64000 64000 64000 86016000000
+"Message size sent to node 49 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 50" 21 64000 64000 64000 86016000000
+"Message size sent to node 50 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 51" 21 64000 64000 64000 86016000000
+"Message size sent to node 51 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 52" 21 64000 64000 64000 86016000000
+"Message size sent to node 52 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 53" 20 64000 64000 64000 81920000000
+"Message size sent to node 53 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 54" 20 64000 64000 64000 81920000000
+"Message size sent to node 54 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 55" 22 64000 64000 64000 90112000000
+"Message size sent to node 55 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 56" 20 64000 64000 64000 81920000000
+"Message size sent to node 56 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 57" 21 64000 64000 64000 86016000000
+"Message size sent to node 57 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 58" 21 64000 64000 64000 86016000000
+"Message size sent to node 58 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 59" 22 64000 64000 64000 90112000000
+"Message size sent to node 59 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 60" 20 64000 64000 64000 81920000000
+"Message size sent to node 60 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 61" 20 64000 64000 64000 81920000000
+"Message size sent to node 61 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 62" 20 64000 64000 64000 81920000000
+"Message size sent to node 62 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 63" 21 64000 64000 64000 86016000000
+"Message size sent to node 63 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 64" 21 64000 64000 64000 86016000000
+"Message size sent to node 64 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 65" 20 64000 64000 64000 81920000000
+"Message size sent to node 65 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 66" 20 64000 64000 64000 81920000000
+"Message size sent to node 66 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 67" 21 64000 64000 64000 86016000000
+"Message size sent to node 67 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 68" 21 64000 64000 64000 86016000000
+"Message size sent to node 68 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 69" 21 64000 64000 64000 86016000000
+"Message size sent to node 69 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 70" 20 64000 64000 64000 81920000000
+"Message size sent to node 70 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 71" 20 64000 64000 64000 81920000000
+"Message size sent to node 71 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 72" 20 64000 64000 64000 81920000000
+"Message size sent to node 72 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 73" 21 64000 64000 64000 86016000000
+"Message size sent to node 73 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 74" 21 64000 64000 64000 86016000000
+"Message size sent to node 74 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 75" 21 64000 64000 64000 86016000000
+"Message size sent to node 75 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 76" 20 64000 64000 64000 81920000000
+"Message size sent to node 76 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 77" 21 64000 64000 64000 86016000000
+"Message size sent to node 77 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 78" 21 64000 64000 64000 86016000000
+"Message size sent to node 78 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 79" 20 64000 64000 64000 81920000000
+"Message size sent to node 79 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 80" 20 64000 64000 64000 81920000000
+"Message size sent to node 80 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 81" 20 64000 64000 64000 81920000000
+"Message size sent to node 81 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 82" 20 64000 64000 64000 81920000000
+"Message size sent to node 82 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 83" 20 64000 64000 64000 81920000000
+"Message size sent to node 83 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 84" 20 64000 64000 64000 81920000000
+"Message size sent to node 84 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 85" 21 64000 64000 64000 86016000000
+"Message size sent to node 85 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 86" 21 64000 64000 64000 86016000000
+"Message size sent to node 86 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 87" 21 64000 64000 64000 86016000000
+"Message size sent to node 87 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 88" 21 64000 64000 64000 86016000000
+"Message size sent to node 88 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 89" 21 64000 64000 64000 86016000000
+"Message size sent to node 89 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 90" 20 64000 64000 64000 81920000000
+"Message size sent to node 90 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 91" 20 64000 64000 64000 81920000000
+"Message size sent to node 91 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 92" 21 64000 64000 64000 86016000000
+"Message size sent to node 92 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 93" 20 64000 64000 64000 81920000000
+"Message size sent to node 93 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 94" 21 64000 64000 64000 86016000000
+"Message size sent to node 94 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 95" 21 64000 64000 64000 86016000000
+"Message size sent to node 95 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 96" 22 64000 64000 64000 90112000000
+"Message size sent to node 96 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 97" 21 64000 64000 64000 86016000000
+"Message size sent to node 97 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 98" 21 64000 64000 64000 86016000000
+"Message size sent to node 98 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 99" 21 64000 64000 64000 86016000000
+"Message size sent to node 99 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 100" 20 64000 64000 64000 81920000000
+"Message size sent to node 100 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 101" 21 64000 64000 64000 86016000000
+"Message size sent to node 101 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 102" 20 64000 64000 64000 81920000000
+"Message size sent to node 102 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 103" 21 64000 64000 64000 86016000000
+"Message size sent to node 103 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 104" 20 64000 64000 64000 81920000000
+"Message size sent to node 104 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 105" 20 64000 64000 64000 81920000000
+"Message size sent to node 105 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 106" 20 64000 64000 64000 81920000000
+"Message size sent to node 106 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 107" 20 64000 64000 64000 81920000000
+"Message size sent to node 107 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 108" 20 64000 64000 64000 81920000000
+"Message size sent to node 108 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 109" 20 64000 64000 64000 81920000000
+"Message size sent to node 109 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 110" 21 64000 64000 64000 86016000000
+"Message size sent to node 110 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 111" 20 64000 64000 64000 81920000000
+"Message size sent to node 111 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 112" 21 64000 64000 64000 86016000000
+"Message size sent to node 112 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 113" 20 64000 64000 64000 81920000000
+"Message size sent to node 113 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 114" 20 64000 64000 64000 81920000000
+"Message size sent to node 114 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 115" 21 64000 64000 64000 86016000000
+"Message size sent to node 115 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 116" 20 64000 64000 64000 81920000000
+"Message size sent to node 116 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 117" 21 64000 64000 64000 86016000000
+"Message size sent to node 117 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 118" 21 64000 64000 64000 86016000000
+"Message size sent to node 118 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 119" 21 64000 64000 64000 86016000000
+"Message size sent to node 119 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 120" 20 64000 64000 64000 81920000000
+"Message size sent to node 120 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 121" 21 64000 64000 64000 86016000000
+"Message size sent to node 121 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 122" 20 64000 64000 64000 81920000000
+"Message size sent to node 122 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 123" 21 64000 64000 64000 86016000000
+"Message size sent to node 123 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 124" 20 64000 64000 64000 81920000000
+"Message size sent to node 124 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 125" 21 64000 64000 64000 86016000000
+"Message size sent to node 125 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 126" 21 64000 64000 64000 86016000000
+"Message size sent to node 126 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 127" 20 64000 64000 64000 81920000000
+"Message size sent to node 127 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 128" 20 64000 64000 64000 81920000000
+"Message size sent to node 128 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 129" 21 64000 64000 64000 86016000000
+"Message size sent to node 129 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 130" 20 64000 64000 64000 81920000000
+"Message size sent to node 130 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 131" 20 64000 64000 64000 81920000000
+"Message size sent to node 131 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 132" 21 64000 64000 64000 86016000000
+"Message size sent to node 132 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 133" 20 64000 64000 64000 81920000000
+"Message size sent to node 133 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 134" 20 64000 64000 64000 81920000000
+"Message size sent to node 134 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 135" 21 64000 64000 64000 86016000000
+"Message size sent to node 135 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 136" 20 64000 64000 64000 81920000000
+"Message size sent to node 136 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 137" 20 64000 64000 64000 81920000000
+"Message size sent to node 137 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 138" 21 64000 64000 64000 86016000000
+"Message size sent to node 138 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 139" 21 64000 64000 64000 86016000000
+"Message size sent to node 139 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 140" 21 64000 64000 64000 86016000000
+"Message size sent to node 140 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 141" 20 64000 64000 64000 81920000000
+"Message size sent to node 141 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 142" 21 64000 64000 64000 86016000000
+"Message size sent to node 142 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 143" 21 64000 64000 64000 86016000000
+"Message size sent to node 143 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 144" 21 64000 64000 64000 86016000000
+"Message size sent to node 144 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 145" 20 64000 64000 64000 81920000000
+"Message size sent to node 145 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 146" 20 64000 64000 64000 81920000000
+"Message size sent to node 146 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 147" 20 64000 64000 64000 81920000000
+"Message size sent to node 147 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 148" 20 64000 64000 64000 81920000000
+"Message size sent to node 148 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 149" 21 64000 64000 64000 86016000000
+"Message size sent to node 149 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 150" 20 64000 64000 64000 81920000000
+"Message size sent to node 150 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 151" 20 64000 64000 64000 81920000000
+"Message size sent to node 151 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 152" 20 64000 64000 64000 81920000000
+"Message size sent to node 152 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 153" 21 64000 64000 64000 86016000000
+"Message size sent to node 153 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 154" 20 64000 64000 64000 81920000000
+"Message size sent to node 154 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 155" 20 64000 64000 64000 81920000000
+"Message size sent to node 155 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 156" 21 64000 64000 64000 86016000000
+"Message size sent to node 156 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 157" 20 64000 64000 64000 81920000000
+"Message size sent to node 157 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 158" 20 64000 64000 64000 81920000000
+"Message size sent to node 158 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 159" 21 64000 64000 64000 86016000000
+"Message size sent to node 159 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 160" 21 64000 64000 64000 86016000000
+"Message size sent to node 160 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 161" 21 64000 64000 64000 86016000000
+"Message size sent to node 161 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 162" 20 64000 64000 64000 81920000000
+"Message size sent to node 162 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 163" 20 64000 64000 64000 81920000000
+"Message size sent to node 163 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 164" 20 64000 64000 64000 81920000000
+"Message size sent to node 164 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 165" 21 64000 64000 64000 86016000000
+"Message size sent to node 165 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 166" 20 64000 64000 64000 81920000000
+"Message size sent to node 166 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 167" 20 64000 64000 64000 81920000000
+"Message size sent to node 167 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 168" 21 64000 64000 64000 86016000000
+"Message size sent to node 168 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 169" 20 64000 64000 64000 81920000000
+"Message size sent to node 169 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 170" 21 64000 64000 64000 86016000000
+"Message size sent to node 170 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 171" 21 64000 64000 64000 86016000000
+"Message size sent to node 171 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 172" 20 64000 64000 64000 81920000000
+"Message size sent to node 172 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 173" 20 64000 64000 64000 81920000000
+"Message size sent to node 173 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 174" 20 64000 64000 64000 81920000000
+"Message size sent to node 174 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 175" 21 64000 64000 64000 86016000000
+"Message size sent to node 175 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 176" 21 64000 64000 64000 86016000000
+"Message size sent to node 176 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 177" 20 64000 64000 64000 81920000000
+"Message size sent to node 177 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 178" 21 64000 64000 64000 86016000000
+"Message size sent to node 178 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 179" 21 64000 64000 64000 86016000000
+"Message size sent to node 179 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 180" 20 64000 64000 64000 81920000000
+"Message size sent to node 180 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 181" 21 64000 64000 64000 86016000000
+"Message size sent to node 181 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 182" 20 64000 64000 64000 81920000000
+"Message size sent to node 182 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 183" 21 64000 64000 64000 86016000000
+"Message size sent to node 183 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 184" 20 64000 64000 64000 81920000000
+"Message size sent to node 184 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 185" 21 64000 64000 64000 86016000000
+"Message size sent to node 185 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 186" 20 64000 64000 64000 81920000000
+"Message size sent to node 186 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 187" 21 64000 64000 64000 86016000000
+"Message size sent to node 187 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 188" 21 64000 64000 64000 86016000000
+"Message size sent to node 188 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 189" 21 64000 64000 64000 86016000000
+"Message size sent to node 189 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 190" 20 64000 64000 64000 81920000000
+"Message size sent to node 190 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 191" 21 64000 64000 64000 86016000000
+"Message size sent to node 191 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 192" 20 64000 64000 64000 81920000000
+"Message size sent to node 192 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 193" 21 64000 64000 64000 86016000000
+"Message size sent to node 193 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 194" 20 64000 64000 64000 81920000000
+"Message size sent to node 194 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 195" 20 64000 64000 64000 81920000000
+"Message size sent to node 195 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 196" 22 64000 64000 64000 90112000000
+"Message size sent to node 196 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 197" 20 64000 64000 64000 81920000000
+"Message size sent to node 197 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 198" 20 64000 64000 64000 81920000000
+"Message size sent to node 198 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 199" 21 64000 64000 64000 86016000000
+"Message size sent to node 199 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 200" 20 64000 64000 64000 81920000000
+"Message size sent to node 200 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 201" 20 64000 64000 64000 81920000000
+"Message size sent to node 201 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 202" 21 64000 64000 64000 86016000000
+"Message size sent to node 202 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 203" 21 64000 64000 64000 86016000000
+"Message size sent to node 203 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 204" 21 64000 64000 64000 86016000000
+"Message size sent to node 204 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 205" 21 64000 64000 64000 86016000000
+"Message size sent to node 205 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 206" 21 64000 64000 64000 86016000000
+"Message size sent to node 206 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 207" 21 64000 64000 64000 86016000000
+"Message size sent to node 207 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 208" 21 64000 64000 64000 86016000000
+"Message size sent to node 208 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 209" 20 64000 64000 64000 81920000000
+"Message size sent to node 209 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 210" 21 64000 64000 64000 86016000000
+"Message size sent to node 210 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 211" 20 64000 64000 64000 81920000000
+"Message size sent to node 211 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 212" 20 64000 64000 64000 81920000000
+"Message size sent to node 212 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 213" 20 64000 64000 64000 81920000000
+"Message size sent to node 213 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 214" 20 64000 64000 64000 81920000000
+"Message size sent to node 214 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 215" 20 64000 64000 64000 81920000000
+"Message size sent to node 215 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 216" 20 64000 64000 64000 81920000000
+"Message size sent to node 216 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 217" 20 64000 64000 64000 81920000000
+"Message size sent to node 217 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 218" 21 64000 64000 64000 86016000000
+"Message size sent to node 218 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 219" 21 64000 64000 64000 86016000000
+"Message size sent to node 219 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 220" 20 64000 64000 64000 81920000000
+"Message size sent to node 220 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 221" 21 64000 64000 64000 86016000000
+"Message size sent to node 221 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 222" 21 64000 64000 64000 86016000000
+"Message size sent to node 222 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 223" 21 64000 64000 64000 86016000000
+"Message size sent to node 223 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 224" 21 64000 64000 64000 86016000000
+"Message size sent to node 224 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 225" 20 64000 64000 64000 81920000000
+"Message size sent to node 225 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 226" 21 64000 64000 64000 86016000000
+"Message size sent to node 226 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 227" 21 64000 64000 64000 86016000000
+"Message size sent to node 227 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 228" 21 64000 64000 64000 86016000000
+"Message size sent to node 228 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 229" 20 64000 64000 64000 81920000000
+"Message size sent to node 229 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 230" 20 64000 64000 64000 81920000000
+"Message size sent to node 230 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 231" 21 64000 64000 64000 86016000000
+"Message size sent to node 231 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 232" 21 64000 64000 64000 86016000000
+"Message size sent to node 232 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 233" 21 64000 64000 64000 86016000000
+"Message size sent to node 233 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 234" 21 64000 64000 64000 86016000000
+"Message size sent to node 234 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 235" 21 64000 64000 64000 86016000000
+"Message size sent to node 235 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 236" 21 64000 64000 64000 86016000000
+"Message size sent to node 236 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 237" 20 64000 64000 64000 81920000000
+"Message size sent to node 237 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 238" 21 64000 64000 64000 86016000000
+"Message size sent to node 238 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 239" 20 64000 64000 64000 81920000000
+"Message size sent to node 239 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 240" 21 64000 64000 64000 86016000000
+"Message size sent to node 240 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 241" 20 64000 64000 64000 81920000000
+"Message size sent to node 241 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 242" 21 64000 64000 64000 86016000000
+"Message size sent to node 242 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 243" 20 64000 64000 64000 81920000000
+"Message size sent to node 243 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 244" 21 64000 64000 64000 86016000000
+"Message size sent to node 244 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 245" 21 64000 64000 64000 86016000000
+"Message size sent to node 245 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 246" 20 64000 64000 64000 81920000000
+"Message size sent to node 246 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 247" 21 64000 64000 64000 86016000000
+"Message size sent to node 247 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 248" 21 64000 64000 64000 86016000000
+"Message size sent to node 248 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 249" 20 64000 64000 64000 81920000000
+"Message size sent to node 249 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 250" 21 64000 64000 64000 86016000000
+"Message size sent to node 250 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 251" 20 64000 64000 64000 81920000000
+"Message size sent to node 251 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 252" 20 64000 64000 64000 81920000000
+"Message size sent to node 252 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 253" 20 64000 64000 64000 81920000000
+"Message size sent to node 253 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 254" 20 64000 64000 64000 81920000000
+"Message size sent to node 254 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 255" 20 64000 64000 64000 81920000000
+"Message size sent to node 255 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 256" 21 64000 64000 64000 86016000000
+"Message size sent to node 256 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 257" 20 64000 64000 64000 81920000000
+"Message size sent to node 257 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 258" 21 64000 64000 64000 86016000000
+"Message size sent to node 258 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 259" 20 64000 64000 64000 81920000000
+"Message size sent to node 259 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 260" 20 64000 64000 64000 81920000000
+"Message size sent to node 260 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 261" 21 64000 64000 64000 86016000000
+"Message size sent to node 261 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 262" 21 64000 64000 64000 86016000000
+"Message size sent to node 262 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 263" 20 64000 64000 64000 81920000000
+"Message size sent to node 263 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 264" 20 64000 64000 64000 81920000000
+"Message size sent to node 264 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 265" 21 64000 64000 64000 86016000000
+"Message size sent to node 265 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 266" 20 64000 64000 64000 81920000000
+"Message size sent to node 266 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 267" 21 64000 64000 64000 86016000000
+"Message size sent to node 267 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 268" 21 64000 64000 64000 86016000000
+"Message size sent to node 268 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 269" 20 64000 64000 64000 81920000000
+"Message size sent to node 269 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 270" 20 64000 64000 64000 81920000000
+"Message size sent to node 270 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 271" 20 64000 64000 64000 81920000000
+"Message size sent to node 271 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 272" 21 64000 64000 64000 86016000000
+"Message size sent to node 272 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 273" 20 64000 64000 64000 81920000000
+"Message size sent to node 273 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 274" 20 64000 64000 64000 81920000000
+"Message size sent to node 274 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 275" 20 64000 64000 64000 81920000000
+"Message size sent to node 275 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 276" 21 64000 64000 64000 86016000000
+"Message size sent to node 276 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 277" 21 64000 64000 64000 86016000000
+"Message size sent to node 277 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 278" 20 64000 64000 64000 81920000000
+"Message size sent to node 278 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 279" 20 64000 64000 64000 81920000000
+"Message size sent to node 279 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 280" 21 64000 64000 64000 86016000000
+"Message size sent to node 280 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 281" 20 64000 64000 64000 81920000000
+"Message size sent to node 281 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 282" 21 64000 64000 64000 86016000000
+"Message size sent to node 282 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 283" 20 64000 64000 64000 81920000000
+"Message size sent to node 283 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 284" 21 64000 64000 64000 86016000000
+"Message size sent to node 284 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 285" 22 64000 64000 64000 90112000000
+"Message size sent to node 285 : taupreload_main => MPI_Send()  " 22 64000 64000 64000 90112000000
+"Message size sent to node 286" 20 64000 64000 64000 81920000000
+"Message size sent to node 286 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 287" 21 64000 64000 64000 86016000000
+"Message size sent to node 287 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 288" 21 64000 64000 64000 86016000000
+"Message size sent to node 288 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 289" 20 64000 64000 64000 81920000000
+"Message size sent to node 289 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 290" 20 64000 64000 64000 81920000000
+"Message size sent to node 290 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 291" 20 64000 64000 64000 81920000000
+"Message size sent to node 291 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 292" 20 64000 64000 64000 81920000000
+"Message size sent to node 292 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 293" 21 64000 64000 64000 86016000000
+"Message size sent to node 293 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 294" 20 64000 64000 64000 81920000000
+"Message size sent to node 294 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 295" 21 64000 64000 64000 86016000000
+"Message size sent to node 295 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 296" 20 64000 64000 64000 81920000000
+"Message size sent to node 296 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 297" 20 64000 64000 64000 81920000000
+"Message size sent to node 297 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 298" 21 64000 64000 64000 86016000000
+"Message size sent to node 298 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 299" 20 64000 64000 64000 81920000000
+"Message size sent to node 299 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 300" 20 64000 64000 64000 81920000000
+"Message size sent to node 300 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 301" 20 64000 64000 64000 81920000000
+"Message size sent to node 301 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 302" 20 64000 64000 64000 81920000000
+"Message size sent to node 302 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 303" 20 64000 64000 64000 81920000000
+"Message size sent to node 303 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 304" 20 64000 64000 64000 81920000000
+"Message size sent to node 304 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 305" 20 64000 64000 64000 81920000000
+"Message size sent to node 305 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 306" 20 64000 64000 64000 81920000000
+"Message size sent to node 306 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 307" 21 64000 64000 64000 86016000000
+"Message size sent to node 307 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 308" 20 64000 64000 64000 81920000000
+"Message size sent to node 308 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 309" 21 64000 64000 64000 86016000000
+"Message size sent to node 309 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 310" 20 64000 64000 64000 81920000000
+"Message size sent to node 310 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 311" 20 64000 64000 64000 81920000000
+"Message size sent to node 311 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 312" 21 64000 64000 64000 86016000000
+"Message size sent to node 312 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 313" 20 64000 64000 64000 81920000000
+"Message size sent to node 313 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 314" 21 64000 64000 64000 86016000000
+"Message size sent to node 314 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 315" 20 64000 64000 64000 81920000000
+"Message size sent to node 315 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 316" 20 64000 64000 64000 81920000000
+"Message size sent to node 316 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 317" 20 64000 64000 64000 81920000000
+"Message size sent to node 317 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 318" 20 64000 64000 64000 81920000000
+"Message size sent to node 318 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 319" 21 64000 64000 64000 86016000000
+"Message size sent to node 319 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 320" 20 64000 64000 64000 81920000000
+"Message size sent to node 320 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 321" 20 64000 64000 64000 81920000000
+"Message size sent to node 321 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 322" 20 64000 64000 64000 81920000000
+"Message size sent to node 322 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 323" 20 64000 64000 64000 81920000000
+"Message size sent to node 323 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 324" 20 64000 64000 64000 81920000000
+"Message size sent to node 324 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 325" 20 64000 64000 64000 81920000000
+"Message size sent to node 325 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 326" 20 64000 64000 64000 81920000000
+"Message size sent to node 326 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 327" 20 64000 64000 64000 81920000000
+"Message size sent to node 327 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 328" 21 64000 64000 64000 86016000000
+"Message size sent to node 328 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 329" 20 64000 64000 64000 81920000000
+"Message size sent to node 329 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 330" 21 64000 64000 64000 86016000000
+"Message size sent to node 330 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 331" 21 64000 64000 64000 86016000000
+"Message size sent to node 331 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 332" 20 64000 64000 64000 81920000000
+"Message size sent to node 332 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 333" 21 64000 64000 64000 86016000000
+"Message size sent to node 333 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 334" 21 64000 64000 64000 86016000000
+"Message size sent to node 334 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 335" 20 64000 64000 64000 81920000000
+"Message size sent to node 335 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 336" 21 64000 64000 64000 86016000000
+"Message size sent to node 336 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 337" 20 64000 64000 64000 81920000000
+"Message size sent to node 337 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 338" 21 64000 64000 64000 86016000000
+"Message size sent to node 338 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 339" 20 64000 64000 64000 81920000000
+"Message size sent to node 339 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 340" 20 64000 64000 64000 81920000000
+"Message size sent to node 340 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 341" 21 64000 64000 64000 86016000000
+"Message size sent to node 341 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 342" 20 64000 64000 64000 81920000000
+"Message size sent to node 342 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 343" 21 64000 64000 64000 86016000000
+"Message size sent to node 343 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 344" 20 64000 64000 64000 81920000000
+"Message size sent to node 344 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 345" 21 64000 64000 64000 86016000000
+"Message size sent to node 345 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 346" 20 64000 64000 64000 81920000000
+"Message size sent to node 346 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 347" 20 64000 64000 64000 81920000000
+"Message size sent to node 347 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 348" 20 64000 64000 64000 81920000000
+"Message size sent to node 348 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 349" 20 64000 64000 64000 81920000000
+"Message size sent to node 349 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 350" 20 64000 64000 64000 81920000000
+"Message size sent to node 350 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 351" 20 64000 64000 64000 81920000000
+"Message size sent to node 351 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 352" 20 64000 64000 64000 81920000000
+"Message size sent to node 352 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 353" 21 64000 64000 64000 86016000000
+"Message size sent to node 353 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 354" 20 64000 64000 64000 81920000000
+"Message size sent to node 354 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 355" 21 64000 64000 64000 86016000000
+"Message size sent to node 355 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 356" 20 64000 64000 64000 81920000000
+"Message size sent to node 356 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 357" 20 64000 64000 64000 81920000000
+"Message size sent to node 357 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 358" 21 64000 64000 64000 86016000000
+"Message size sent to node 358 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 359" 21 64000 64000 64000 86016000000
+"Message size sent to node 359 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 360" 21 64000 64000 64000 86016000000
+"Message size sent to node 360 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 361" 21 64000 64000 64000 86016000000
+"Message size sent to node 361 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 362" 20 64000 64000 64000 81920000000
+"Message size sent to node 362 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 363" 20 64000 64000 64000 81920000000
+"Message size sent to node 363 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 364" 20 64000 64000 64000 81920000000
+"Message size sent to node 364 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 365" 20 64000 64000 64000 81920000000
+"Message size sent to node 365 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 366" 21 64000 64000 64000 86016000000
+"Message size sent to node 366 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 367" 20 64000 64000 64000 81920000000
+"Message size sent to node 367 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 368" 21 64000 64000 64000 86016000000
+"Message size sent to node 368 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 369" 21 64000 64000 64000 86016000000
+"Message size sent to node 369 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 370" 20 64000 64000 64000 81920000000
+"Message size sent to node 370 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 371" 20 64000 64000 64000 81920000000
+"Message size sent to node 371 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 372" 21 64000 64000 64000 86016000000
+"Message size sent to node 372 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 373" 21 64000 64000 64000 86016000000
+"Message size sent to node 373 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 374" 21 64000 64000 64000 86016000000
+"Message size sent to node 374 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 375" 20 64000 64000 64000 81920000000
+"Message size sent to node 375 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 376" 21 64000 64000 64000 86016000000
+"Message size sent to node 376 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 377" 21 64000 64000 64000 86016000000
+"Message size sent to node 377 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 378" 20 64000 64000 64000 81920000000
+"Message size sent to node 378 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 379" 21 64000 64000 64000 86016000000
+"Message size sent to node 379 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 380" 21 64000 64000 64000 86016000000
+"Message size sent to node 380 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 381" 20 64000 64000 64000 81920000000
+"Message size sent to node 381 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 382" 21 64000 64000 64000 86016000000
+"Message size sent to node 382 : taupreload_main => MPI_Send()  " 21 64000 64000 64000 86016000000
+"Message size sent to node 383" 20 64000 64000 64000 81920000000
+"Message size sent to node 383 : taupreload_main => MPI_Send()  " 20 64000 64000 64000 81920000000
+"Message size sent to node 384" 33 64000 64000 64000 135168000000
+"Message size sent to node 384 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 385" 33 64000 64000 64000 135168000000
+"Message size sent to node 385 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 386" 33 64000 64000 64000 135168000000
+"Message size sent to node 386 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 387" 32 64000 64000 64000 131072000000
+"Message size sent to node 387 : taupreload_main => MPI_Send()  " 32 64000 64000 64000 131072000000
+"Message size sent to node 388" 33 64000 64000 64000 135168000000
+"Message size sent to node 388 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 389" 33 64000 64000 64000 135168000000
+"Message size sent to node 389 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 390" 33 64000 64000 64000 135168000000
+"Message size sent to node 390 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 391" 33 64000 64000 64000 135168000000
+"Message size sent to node 391 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 392" 33 64000 64000 64000 135168000000
+"Message size sent to node 392 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 393" 33 64000 64000 64000 135168000000
+"Message size sent to node 393 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 394" 33 64000 64000 64000 135168000000
+"Message size sent to node 394 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 395" 33 64000 64000 64000 135168000000
+"Message size sent to node 395 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 396" 32 64000 64000 64000 131072000000
+"Message size sent to node 396 : taupreload_main => MPI_Send()  " 32 64000 64000 64000 131072000000
+"Message size sent to node 397" 33 64000 64000 64000 135168000000
+"Message size sent to node 397 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 398" 33 64000 64000 64000 135168000000
+"Message size sent to node 398 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size sent to node 399" 33 64000 64000 64000 135168000000
+"Message size sent to node 399 : taupreload_main => MPI_Send()  " 33 64000 64000 64000 135168000000
+"Message size received from all nodes" 8000 64000 64000 64000 32768000000000
