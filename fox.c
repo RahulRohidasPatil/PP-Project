@@ -59,14 +59,14 @@ int main(int argc, char *argv[])
     // Set size of matrix using command line argument
     matrix_size = atoi(argv[1]);
 
-    // Allocate Memory to Matrices
-    allocate_matrix(&matrix_A, matrix_size);
-    allocate_matrix(&matrix_B, matrix_size);
-    allocate_matrix(&matrix_C, matrix_size);
-
     // Fill Random data in both matrices
     if (grid.my_rank == 0)
     {
+        // Allocate Memory to Matrices
+        allocate_matrix(&matrix_A, matrix_size);
+        allocate_matrix(&matrix_B, matrix_size);
+        allocate_matrix(&matrix_C, matrix_size);
+
         fill_matrix(matrix_A, matrix_size);
         printf("Matrix A:\n");
         print_matrix(matrix_A, matrix_size);
@@ -105,26 +105,35 @@ int main(int argc, char *argv[])
                 displs[grid.q * i + j] = displ * i + j;
             }
     }
-    MPI_Scatterv(*matrix_A, sendcounts, displs, local_matrix_mpi_t, *local_A, local_matrix_elements, MPI_INT, 0, grid.comm);
-    MPI_Scatterv(*matrix_B, sendcounts, displs, local_matrix_mpi_t, *local_B, local_matrix_elements, MPI_INT, 0, grid.comm);
+    int *globatPtrA = NULL, *globalPtrB = NULL, *globalPtrC = NULL;
+    if (grid.my_rank == 0)
+    {
+        globatPtrA = *matrix_A;
+        globalPtrB = *matrix_B;
+        globalPtrC = *matrix_C;
+    }
+    MPI_Scatterv(globatPtrA, sendcounts, displs, local_matrix_mpi_t, *local_A, local_matrix_elements, MPI_INT, 0, grid.comm);
+    MPI_Scatterv(globalPtrB, sendcounts, displs, local_matrix_mpi_t, *local_B, local_matrix_elements, MPI_INT, 0, grid.comm);
 
     // Start Fox Algorithm
     fox(grid, local_A, local_B, local_C);
 
     // Gather all the results
-    MPI_Gatherv(*local_C, local_matrix_elements, MPI_INT, *matrix_C, sendcounts, displs, local_matrix_mpi_t, 0, grid.comm);
+    MPI_Gatherv(*local_C, local_matrix_elements, MPI_INT, globalPtrC, sendcounts, displs, local_matrix_mpi_t, 0, grid.comm);
 
     // Print the result matrix
     if (grid.my_rank == 0)
     {
         printf("Matrix C:\n");
         print_matrix(matrix_C, matrix_size);
+
+        // Free all the allocated memory
+        freeMatrix(matrix_A);
+        freeMatrix(matrix_B);
+        freeMatrix(matrix_C);
     }
 
     // Free all the allocated memory
-    freeMatrix(matrix_A);
-    freeMatrix(matrix_B);
-    freeMatrix(matrix_C);
     freeMatrix(local_A);
     freeMatrix(local_B);
     freeMatrix(local_C);
